@@ -11,3 +11,5 @@ lint: clang-format cppcheck
 
 format:
 	clang-format -style=google --Werror -i *.c
+
+verify: lint build
