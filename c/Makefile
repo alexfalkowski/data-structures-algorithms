@@ -1,8 +1,8 @@
 build:
-	qb --name data-structures --static
+	qb --name data_structures --static
 
 clang-format:
-	clang-format -style=google --dry-run --Werror *.c
+	clang-format -style=google --dry-run --Werror *.c *.h
 
 cppcheck:
 	cppcheck --platform=unix64 --error-exitcode=1 --enable=all --suppress=missingIncludeSystem .
@@ -10,6 +10,6 @@ cppcheck:
 lint: clang-format cppcheck
 
 format:
-	clang-format -style=google --Werror -i *.c
+	clang-format -style=google --Werror -i *.c *.h
 
 verify: lint build

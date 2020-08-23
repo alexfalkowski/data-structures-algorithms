@@ -1,9 +1,11 @@
 #include <stdio.h>
 
+#include "linked_list.h"
+
 int main() {
-  for (int ch = 75; ch <= 100; ch++) {
-    printf("ASCII value = %d, Character = %c\n", ch, ch);
-  }
+  struct linked_list_t* list = linked_list_new();
+
+  linked_list_dispose(list);
 
   return 0;
 }
